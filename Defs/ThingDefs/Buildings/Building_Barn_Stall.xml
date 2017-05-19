@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+
+	<ThingDef Name="BuildingBase" Abstract="True">
+	    <category>Building</category>
+	    <thingClass>Building</thingClass>
+	    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+	    <selectable>true</selectable>
+	    <drawerType>MapMeshAndRealTime</drawerType>
+	    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	    <repairEffect>Repair</repairEffect>
+	    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+	    <filthLeaving>BuildingRubble</filthLeaving>
+	</ThingDef>
+
+	<ThingDef Name="BarnStallBase" Abstract="True" ParentName="BuildingBase">
+		<ThingClass>Building_Bed</ThingClass>
+		<designationCategory>Misc</designationCategory>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<AltitudeLayer>Building</AltitudeLayer>
+		<fillPercent>0.25</fillPercent>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<Passability>PassThroughOnly</Passability>
+		<surfaceType>Item</surfaceType>
+	</ThingDef>
+
+
+	<!-- ++++++++++++++++++++++++++++++++BarnStall++++++++++++++++++++++++++++++++ -->
+
+
+	<ThingDef ParentName="BarnStallBase">
+		<defName>BarnStall</defName>
+		<label>barn stall</label>
+		<description>A stall for your barn animals. Fits any animal.</description>
+		<rotatable>true</rotatable>
+		<PathCost>40</PathCost>
+		<CastEdgeShadows>true</CastEdgeShadows>
+		<graphicData>
+			<texPath>Things/Building/BarnStall</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.1,2.1</drawSize>
+		</graphicData>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
+		<Size>(2,2)</Size>
+		<building>
+			<bed_humanlike>false</bed_humanlike>
+			<bed_ShowSleeperBody>true</bed_ShowSleeperBody>
+			<bed_healPerDay>3</bed_healPerDay>
+		</building>
+		<statBases>
+			<MaxHitPoints>140</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>600</WorkToBuild>
+			<BedRestEffectiveness>0.95</BedRestEffectiveness>
+			<Comfort>0.65</Comfort>
+			<ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+		</statBases>
+	</ThingDef>
+
+
+</Buildings>
+
+
+
+
+
+
